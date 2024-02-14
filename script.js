@@ -35,7 +35,7 @@ function OnMouseOut(){
         if (cresce && PorcTime < 100) {
            
             circle.style.width = PorcTime + '%';
-            // circle.style.height = PorcTime + '%';
+            
             
             PorcTime++;
              // LOOP
@@ -54,19 +54,19 @@ function OnMouseOut(){
         }else if(!cresce && PorcTime > 0 && PorcTime !=100){
                 PorcTime--
                 circle.style.width = PorcTime + '%';
-                // circle.style.height = PorcTime + '%';
+                
                 
                 
             
         }
         else{
-            changing = false; // Marca que terminou de alterar o tamanho
+            changing = false;
             return;
             
         }
         LoopTimer  = setTimeout(changeSize, 0);
         
-    
+        console.log(PorcTime)
     }
     
     
