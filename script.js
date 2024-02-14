@@ -1,6 +1,6 @@
 const circle = document.getElementById('bar')
 const container = document.getElementById( 'switch')
-const card = document.querySelector('#CARD')
+const card = document.querySelector('#card-container')
 
 let PorcTime = 0;
 let cresce = false

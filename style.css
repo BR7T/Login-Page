@@ -5,39 +5,88 @@
     font-family: 'Montserrat', sans-serif;
 }
 body{
-    background-color: rgb(34, 34, 34);
+    background-image:url(assets/richard-horvath-_nWaeTF6qo0-unsplash.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
-    flex-direction: column;
-    gap: 2%;
-    color: white;
+    
+    
+    color: black;
      
 }
+#content{
+    background-color: beige;
+    height: 90%;
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px 8px rgba(0, 0, 0, 0.337);
+}
+
+#CARD{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    height: 100%;
     
+    flex: 1;
+    
+    
+    position:relative;
+    
+    
+    
+    
+}
+#card-container{
+
+    perspective: 1000px;
+    transition: transform 0.7s;
+    transform-style:preserve-3d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 20rem;
+    width: 100%;
+    
+}
+
 #LoginArea{
     backface-visibility: hidden;
 }
 #SignInArea, #LoginArea{
+    top: 0;
+    height: 20rem;
     position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
     display: flex;
-    
+    background-color: beige;
     backface-visibility: hidden;
     justify-content: center;
-    background-color: rgb(34, 34, 34);
      
 }
 button{
-    border: 2px solid white;
+    border: 2px solid black;
     background-color: transparent;
     height: 35px;
     width: 200px;
     font-size: 1rem;
-    color: white;
+    color: black;
     margin: 10px;
     border-radius: 10px;
     transition: all 0.3s;
@@ -46,32 +95,22 @@ button{
 }
 
 button:hover{
-    background-color: white;
-    color: rgb(34, 34, 34);
+    background-color: rgb(34, 34, 34);
+    color: white;
 
 }
 
 form{
     display: flex;
-    justify-content: center;
+    gap: 2px;
     align-items: center;
     flex-direction: column;
-}
-#CARD{
-    perspective: 100%;
-    border-radius: 20px;
-    transition: transform 0.6s;
-    transform-style:preserve-3d;
-    border: 2px solid white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 23rem;
-    width: 20rem;
+    padding: 2px;
+    
 }
 label{
     align-self: start;  
+    font-weight: 600;
 }
 #SignInArea{
     transform: rotateY(180deg); 
@@ -84,10 +123,10 @@ label{
 
 
 #switch{
-    height: 60px;
+    height:45px;
     border-radius: 100px;
     width: 200px;
-    border: 2px solid white;
+    border: 2px solid black;
     display: flex;
     align-items: center;
     position: relative;
@@ -108,28 +147,72 @@ label{
     z-index: 2;
     position: absolute;
     left: 0;
-    /* top: 50%;
-    transform: translate(-50%,-50%); */
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     background-color: white;
     border-radius: 100px;
     height: 100%;
     width: 0%;
+    border: 4px solid black
     
 }
 
 input{
-    height:35px;
-    width: 250px;
+    height:40px;
+    width: 350px;
     background-color: transparent;
-    border-radius: 20px;
-    border:  2px solid white;
+    border-radius: 10px;
+    border:  2px solid black;
     outline: none;
     padding-left: 10px;
-    color: white;
+    color: black;
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
+    transition: all 0.3s ;
 }
-input:focus{
-    background-color: white;
+
+#IconsArea ul{
+    list-style: none;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+#IconsArea ul li p{
+    font-size: 1rem;
+
+    padding: 0 10px;
+}
+#IconsArea li a{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     color: black;
+    text-decoration: none;
+    height: 35px;
+    padding: 15px;
+
+    border-radius: 10px;
+    border: 2px solid black;
+    transition: all 0.3s;
+}
+#IconsArea li a:hover{
+    background-color: rgb(34, 34, 34);
+    color: white;
+}
+
+#window{
+    height: 100%;
+    box-shadow: inset 0 0 15px 6px rgba(0, 0, 0, 0.337);
+    flex:1;
+    background-image: url(assets/richard-horvath-_nWaeTF6qo0-unsplash.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    border-radius: 20px;
+    animation:1s window forwards ease
+}
+@keyframes window {
+    0%{
+        flex: 0;
+    }
 }
