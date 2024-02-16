@@ -7,7 +7,8 @@
   font-family: "Montserrat", sans-serif;
 }
 :root {
-  --bg-image: url(assets/pawel-czerwinski-prMn9KINLtI-unsplash.jpg);
+  --bg-image: url(assets/richard-horvath-RAZU_R66vUc-unsplash.jpg);
+  --white:#f7f7f7;
 }
 body {
   background-image: var(--bg-image);
@@ -23,7 +24,7 @@ body {
   color: black;
 }
 #content {
-  background-color: beige;
+  background-color: var(--white);
   height: 90%;
   width: 80%;
   display: flex;
@@ -33,19 +34,19 @@ body {
   position: relative;
   padding: 20px;
   border-radius: 20px;
-  box-shadow: 0 0 15px 8px rgba(0, 0, 0, 0.337);
+  box-shadow: 0 0 8px 8px rgba(0, 0, 0, 0.337);
 }
 
 #CARD {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  
+  justify-content: space-evenly;
   border-radius: 20px;
   height: 100%;
-
-  flex: 1;
-
+  
+  flex: 0.75;
   position: relative;
 }
 #card-container {
@@ -62,18 +63,20 @@ body {
 
 #LoginArea {
   backface-visibility: hidden;
+  height: 20rem;
+}
+#SignInArea{
+  height: 25rem;
 }
 #SignInArea,
 #LoginArea {
+  width: 100%;
   top: 0;
-  height: 20rem;
-
   position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
-  display: flex;
-  background-color: beige;
+  background-color: var(--white);
   backface-visibility: hidden;
   justify-content: center;
 }
@@ -98,10 +101,11 @@ button:hover {
 
 form {
   display: flex;
-  gap: 2px;
+  gap: 10px;
   align-items: center;
   flex-direction: column;
   padding: 2px;
+  width: 80%;
 }
 label {
   align-self: start;
@@ -129,6 +133,7 @@ label {
   justify-content: center;
   user-select: none;
   cursor: pointer;
+  font-weight: 600;
 }
 #switch p {
   background-attachment: fixed;
@@ -149,7 +154,7 @@ label {
 
 input {
   height: 40px;
-  width: 400px;
+  width: 100%;
   background-color: transparent;
   border-radius: 10px;
   border: 2px solid black;
@@ -194,7 +199,7 @@ input {
 #window {
   font-family: "Cormorant Garamond", serif;
   height: 100%;
-  box-shadow: inset 0 0 15px 6px rgba(0, 0, 0, 0.337);
+  box-shadow: inset 0 0 8px 6px rgba(0, 0, 0, 0.337);
   flex: 1;
   padding: 25px;
   background-image: var(--bg-image);
@@ -256,4 +261,50 @@ input {
   width: 60px;
   height: 2px;
   background-color: white;
+}
+
+@media screen and (max-width: 600px){
+  #window{
+    display: none;
+  }
+  #SignInArea,
+  #LoginArea{
+    width: 100%;
+    
+    
+  }
+  input{
+    width: 100%;
+    height: 25px;
+  }
+  #IconsArea li p{
+    display: none;
+  }
+  #IconsArea li a{
+    border: none;
+  }
+  #IconsArea ul{
+    display: flex;
+    flex-direction: row;
+  }
+  #content{
+    height: 65%;
+    background-color: var(--white);
+    background-attachment: fixed ;
+    background-size: cover;
+    background-position: center;
+    color: black;
+  }
+  #SignInArea{
+
+    justify-content: start;
+  }
+  #bar{
+    border: none;
+  }
+  #switch p{
+    color: black;
+    font-size: .8rem;
+  }
+  
 }
