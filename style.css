@@ -7,8 +7,8 @@
   font-family: "Montserrat", sans-serif;
 }
 :root {
-  --bg-image: url(assets/milad-fakurian-E8Ufcyxz514-unsplash.jpg);
-  --white:#f7f7f7;
+  --bg-image: url(assets/gregory-julien-gNaah11NBLo-unsplash.jpg);
+  --white: #f7f7f7;
 }
 body {
   background-image: var(--bg-image);
@@ -41,11 +41,11 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+
   justify-content: space-evenly;
   border-radius: 20px;
   height: 100%;
-  
+
   flex: 1;
   position: relative;
 }
@@ -65,10 +65,16 @@ body {
   backface-visibility: hidden;
   height: 20rem;
 }
+#LoginArea h1,
+#SignInArea h1 {
+  align-self: self-start;
+  font-size: 3rem;
+  padding: 40px 0;
+}
 
 #SignInArea,
 #LoginArea {
-  width: 100%;
+  width: 80%;
   height: 100%;
   position: absolute;
   display: flex;
@@ -78,15 +84,11 @@ body {
   backface-visibility: hidden;
   justify-content: center;
 }
-#SignInArea{
-  
-  justify-content: start;
-}
 button {
   border: 2px solid black;
   background-color: transparent;
-  height: 35px;
-  width: 200px;
+  height: 45px;
+  width: 300px;
   font-size: 1rem;
   color: black;
   margin: 10px;
@@ -107,7 +109,7 @@ form {
   align-items: center;
   flex-direction: column;
   padding: 2px;
-  width: 80%;
+  width: 100%;
 }
 label {
   align-self: start;
@@ -155,7 +157,7 @@ label {
 }
 
 input {
-  height: 45px;
+  height: 50px;
   width: 100%;
   background-color: transparent;
   border-radius: 10px;
@@ -166,6 +168,10 @@ input {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   transition: all 0.3s;
+}
+input:focus {
+  box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.337);
+  border: 2px solid black;
 }
 
 #IconsArea ul {
@@ -186,7 +192,7 @@ input {
   align-items: center;
   color: black;
   text-decoration: none;
-  height: 35px;
+  height: 55px;
   padding: 15px;
 
   border-radius: 10px;
@@ -213,7 +219,7 @@ input {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: all 1s ease
+  transition: all 1s ease;
 }
 @keyframes window {
   0% {
@@ -245,7 +251,9 @@ input {
 }
 #window footer p {
   filter: drop-shadow(0 2px 4px black);
-  flex:5;
+  flex: 5;
+  font-size: 2.5rem;
+  user-select: none;
 }
 #window footer #github-link {
   align-self: flex-end;
@@ -264,89 +272,118 @@ input {
   width: 60px;
   height: 2px;
   background-color: white;
-  box-shadow: 0px 2px 8px 0px black
+  box-shadow: 0px 2px 8px 0px black;
 }
 
-#switch-mobile{
+#switch-mobile {
   width: 60px;
   height: 36px;
   border: 2px solid black;
   border-radius: 30px;
   position: relative;
+  background-image: var(--bg-image);
+  background-attachment: fixed;
+  background-size: cover;
+  cursor: pointer;
 }
-#dot{
+#dot {
   position: absolute;
-  left: 0;
+  left: -10px;
   border-radius: 30px;
   top: 50%;
   transform: translateY(-50%);
-  height: 30px;
-  width: 30px;
-  background-color: red;
+  height: 40px;
+  width: 40px;
+  background-color: var(--white);
+  box-shadow: 0px 2px 8px 1px rgba(0, 0, 0, 0.337);
+}
+.slide-right {
+  animation: slide-right 0.4s ease forwards;
+}
+.slide-left {
+  animation: slide-left 0.4s ease forwards;
 }
 
+@keyframes slide-right {
+  0% {
+    left: -10px;
+  }
+  100% {
+    left: 50%;
+  }
+}
+@keyframes slide-left {
+  0% {
+    left: 50%;
+  }
+  100% {
+    left: -10px;
+  }
+}
 
-
-
-
-
-
-
+#mobile-area-button {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+#mobile-area-button #text-mobile-button {
+  padding: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+}
 
 /*  */
 
+@media screen and (max-width: 700px) {
+  #window {
+    display: none;
+  }
 
-@media screen and (max-width: 700px){
-  #window{
-    display: none;
-  }
-  
   #SignInArea,
-  #LoginArea{
-    width: 100%;
-    
-    
-  }
-  input{  
+  #LoginArea {
     width: 100%;
   }
-  #IconsArea li p{
+  #switch {
     display: none;
   }
-  #IconsArea li a{
+  #mobile-area-button {
+    display: flex;
+  }
+  input {
+    width: 100%;
+  }
+  #IconsArea li p {
+    display: none;
+  }
+  #IconsArea li a {
     border: none;
   }
-  #IconsArea ul{
+  #IconsArea ul {
     display: flex;
     flex-direction: row;
   }
-  #content{
+  #content {
     height: 65%;
     background-color: var(--white);
-    background-attachment: fixed ;
+    background-attachment: fixed;
     background-size: cover;
     background-position: center;
     color: black;
   }
-  #SignInArea{
-
+  #SignInArea {
     justify-content: start;
   }
-  #bar{
+  #bar {
     border: none;
   }
-  #switch p{
+  #switch p {
     color: black;
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
-  
 }
 
-@media screen and (max-width:900px){
-  #window{
+@media screen and (max-width: 900px) {
+  #window {
     flex: 0.5;
-    
-  };
+  }
 }
-
-

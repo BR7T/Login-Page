@@ -54,3 +54,25 @@ function changeSize() {
   }
   LoopTimer = setTimeout(changeSize, 0);
 }
+
+
+const toggleButtonArea = document.getElementById('switch-mobile')
+const toggleButton = document.getElementById('dot')
+const textMobile = document.getElementById('text-mobile-button')
+
+
+toggleButtonArea.addEventListener('click',()=>{
+  document.body.classList.toggle('on')
+  card.classList.toggle("flip")
+  if(document.body.classList.contains('on')){
+    toggleButton.classList.add('slide-right')
+    toggleButton.classList.remove('slide-left')
+    textMobile.innerHTML = 'Clique e faça Login'
+  }else{
+    toggleButton.classList.add('slide-left')
+    toggleButton.classList.remove('slide-right')
+    textMobile.innerHTML = 'Clique e faça seu Cadastro'
+
+  }
+  
+})
